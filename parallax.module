@@ -1,0 +1,17 @@
+<?php
+
+function parallax_init() {
+  drupal_add_js("misc/jquery.form.js");
+  drupal_add_library("system", "drupal.ajax");
+}
+
+function parallax_include_parallax() {
+  drupal_add_js(drupal_get_path("module", "parallax") . "/js/jquery.scrollTo.js");
+  drupal_add_js(drupal_get_path("module", "parallax") . "/js/jquery.nav.js");
+  drupal_add_js(drupal_get_path("module", "parallax") . "/js/script.js");
+}
+
+function template_preprocess_htmlpage(&$vars) {
+  watchdog("Overriden", "Overriden");
+  parallax_include_parallax();
+}
