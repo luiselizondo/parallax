@@ -1,17 +1,20 @@
 <?php
 
-function parallax_init() {
-  drupal_add_js("misc/jquery.form.js");
-  drupal_add_library("system", "drupal.ajax");
-}
-
 function parallax_include_parallax() {
   drupal_add_js(drupal_get_path("module", "parallax") . "/js/jquery.scrollTo.js");
   drupal_add_js(drupal_get_path("module", "parallax") . "/js/jquery.nav.js");
   drupal_add_js(drupal_get_path("module", "parallax") . "/js/script.js");
 }
 
-function template_preprocess_htmlpage(&$vars) {
-  watchdog("Overriden", "Overriden");
+function parallax_preprocess_node(&$vars) {
   parallax_include_parallax();
+}
+
+function parallax_init() {
+  // drupal_add_css(drupal_get_path("theme", "bootstyle") . "/js/wysihtml5/lib/css/bootstrap.min.css");
+  // drupal_add_css(drupal_get_path("theme", "bootstyle") . "/js/wysihtml5/src/bootstrap-wysihtml5.css");
+  // drupal_add_js(drupal_get_path("theme", "bootstyle") . "/js/wysihtml5/lib/js/wysihtml5-0.3.0.js");
+  // drupal_add_js(drupal_get_path("theme", "bootstyle") . "/js/wysihtml5/lib/js/bootstrap.min.js");
+  // drupal_add_js(drupal_get_path("theme", "bootstyle") . "/js/wysihtml5/src/bootstrap-wysihtml5.js");
+  // drupal_add_js(drupal_get_path("theme", "bootstyle") . "/js/script.js");
 }

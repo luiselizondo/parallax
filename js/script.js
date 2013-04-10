@@ -1,7 +1,7 @@
 (function ($) {
   Drupal.behaviors.para = {
     attach: function (context, settings) {
-			$('ul.parallax', context).onePageNav({
+			$('#navbar ul.menu', context).onePageNav({
 				currentClass: 'active',
 		    changeHash: false,
 		    scrollSpeed: 750,
@@ -15,7 +15,6 @@
 		    },
 		    easing: 'swing',
 		    begin: function() {
-		        //I get fired when the animation is starting
 		    },
 		    end: function() {
 		        //I get fired when the animation is ending
